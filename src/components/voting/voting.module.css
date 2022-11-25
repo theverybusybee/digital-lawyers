@@ -1,0 +1,47 @@
+.section {
+  margin: 0 auto;
+  padding: 120px 35px 0;
+  max-width: 1437px;
+}
+
+.title {
+  margin: 0;
+  padding-bottom: 80px;
+  max-width: 775px;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 36px;
+  text-align: left;
+}
+
+.cardsContainer {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(268px, 433px));
+  gap: 107px 20px;
+}
+
+@media (max-width: 925px) {
+  .cardsContainer {
+    padding: 0;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .section {
+    padding-left: 19px;
+    padding-right: 19px;
+  }
+  .cardsContainer {
+    grid-template-columns: 1fr;
+    gap: 50px 0;
+  }
+  .title {
+    font-size: 20px;
+    line-height: 22px;
+  }
+}
