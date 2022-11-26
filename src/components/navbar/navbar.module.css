@@ -1,0 +1,19 @@
+.listItem {
+  margin-left: 35px;
+  margin-right: 35px;
+}
+
+.link {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.4s ease;
+}
+
+.link:hover {
+  color: #c6a67d;
+  cursor: pointer;
+}
+
+.selectedLink {
+  color: #c6a67d;
+}

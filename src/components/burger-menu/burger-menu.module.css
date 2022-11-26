@@ -37,7 +37,7 @@
   stroke-dashoffset: -68px;
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1100px) {
   .menu {
     display: block;
   }

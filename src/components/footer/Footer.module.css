@@ -1,8 +1,13 @@
 .footer {
-  margin-top: 107px;
-  background: url(http://localhost:3000/static/media/bg-figure-footer.0d4d5a373aa0f65095c3.svg) no-repeat bottom 16em
-      left -3em,
-    url(http://localhost:3000/static/media/bg-figure-footer.0d4d5a373aa0f65095c3.svg) no-repeat top -25em right -13em,
+  background: #101010;
+}
+
+.footerContainer {
+  margin: 0 auto;
+  background: url(../../images/bg-figure-footer.svg)
+      no-repeat bottom 16em left -3em,
+    url(../../images/bg-figure-footer.svg)
+      no-repeat top -25em right -13em,
     #101010;
   background-size: 605.81px 692.19px;
 }
@@ -14,9 +19,7 @@
 }
 
 .grid {
-  padding-left: 40px;
-  padding-top: 80px;
-  padding-bottom: 110px;
+  padding: 80px 35px 110px;
   display: grid;
   grid-template-columns: 1fr 2fr 2fr 3fr;
   grid-template-rows: 1fr 2fr;
@@ -117,15 +120,19 @@
   padding-left: 300px;
 }
 
-.note {
+.noteContainer {
   background: #c6a67d;
+  color: #101010;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+.note {
   display: flex;
   flex-direction: column;
 }
 
 .privacyPolicy {
-  padding-left: 35px;
-  padding-right: 35px;
   padding-top: 10px;
   padding-bottom: 20px;
   display: flex;
@@ -135,8 +142,6 @@
 .noteText {
   margin: 0;
   padding: 0;
-  padding-left: 35px;
-  padding-right: 95px;
   padding-top: 20px;
   max-width: 1305px;
   font-family: "Montserrat";
@@ -144,7 +149,6 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
-  color: #101010;
 }
 
 .privacyPolicyText {
@@ -157,7 +161,6 @@
   line-height: 17px;
   display: flex;
   align-items: center;
-  color: #101010;
 }
 
 @media screen and (max-width: 1266px) {
@@ -168,7 +171,6 @@
 
 @media screen and (max-width: 1120px) {
   .grid {
-    padding-left: 301px;
     grid-template-columns: 269px 280px;
     grid-template-rows: 74px 174px 129px 37px;
     gap: 0px 50px;
@@ -229,7 +231,6 @@
   }
 
   .privacyPolicy {
-    padding-left: 101px;
     padding-top: 10px;
     padding-bottom: 20px;
     display: flex;
@@ -237,13 +238,11 @@
   }
 
   .noteText {
-    padding-left: 101px;
     padding-top: 20px;
     max-width: 1305px;
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
-    color: #101010;
   }
 
   .button {
@@ -253,28 +252,34 @@
   }
 }
 
-@media screen and (max-width: 926px) {
-  .footer {
-    background: url(http://localhost:3000/static/media/bg-figure-footer.0d4d5a373aa0f65095c3.svg) no-repeat bottom 1em
-        left -17em,
-      #101010;
-  }
+@media screen and (max-width: 900px) {
   .grid {
-    padding-left: 101px;
+    padding-left: 110px;
+    padding-right: 110px;
+  }
+  .noteContainer {
+    padding-left: 110px;
+    padding-right: 110px;
   }
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 700px) {
   .grid {
-    padding: 0;
-    padding-left: 20px;
-    padding-top: 100px;
+    padding: 60px 15px 55px;
+
     grid-template-columns: 1fr;
     grid-template-rows: 43px 99px;
     gap: 0px 0px;
     grid-template-areas:
       "nameplates"
       "info";
+  }
+
+  .noteContainer {
+    padding-left: 20px;
+    padding-right: 20px;
+    background: #101010;
+    color: #6d6d6d;
   }
 
   .logo {
@@ -297,18 +302,7 @@
     margin-bottom: 5px;
   }
 
-  .privacyPolicyText {
-    color: gray;
-  }
-
-  .noteText {
-    padding-right: 20px;
-    padding-left: 20px;
-    color: gray;
-  }
-
   .privacyPolicy {
-    padding-left: 20px;
     padding-top: 10px;
     padding-bottom: 20px;
     display: flex;
@@ -320,14 +314,19 @@
     bottom: -151px;
     right: 13px;
   }
+  .info {
+    text-align: left;
+  }
 }
 
-@media screen and (max-width: 360px) {
-  .footer {
-    background: url(http://localhost:3000/static/media/bg-figure-footer.0d4d5a373aa0f65095c3.svg) no-repeat top 3em left -10em,
+@media screen and (max-width: 470px) {
+  .footerContainer {
+    background: url(../../images/bg-figure-footer.svg)
+        no-repeat top 3em left -10em,
       #101010;
   }
-  .note {
-    background: inherit;
+  .noteContainer {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }

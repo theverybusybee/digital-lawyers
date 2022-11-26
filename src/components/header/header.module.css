@@ -7,7 +7,7 @@
   padding-left: 35px;
   padding-right: 35px;
   margin: 0 auto;
-  background: url(http://localhost:3000/static/media/bg-figure.0fd5c3eb700da4da0306.svg) no-repeat right -29em bottom -45em,
+  background: url(../../images/bg-figure.svg) no-repeat right -29em bottom -45em,
     #101010;
 }
 
@@ -22,6 +22,7 @@
 
 .logo {
   grid-area: "logo";
+  min-width: 140px;
 }
 
 .linksContainer {
@@ -32,26 +33,7 @@
   font-weight: 400;
   font-size: 17px;
   line-height: 21px;
-}
-
-.listItem {
-  margin-left: 35px;
-  margin-right: 35px;
-}
-
-.link {
-  text-decoration: none;
-  color: #fff;
-  transition: color 0.4s ease;
-}
-
-.link:hover {
-  color: #c6a67d;
-  cursor: pointer;
-}
-
-.selectedLink {
-  color: #c6a67d;
+  text-align: center;
 }
 
 .headerBottom {
@@ -97,23 +79,45 @@
 
 @media (max-width: 1100px) {
   .headerBottom {
-    gap: 60px;
-    text-align: center;
+    gap: 40px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .headerContainer {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+  .linksContainer {
+    display: none;
+  }
+  .linksContainer.active {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .img.nonVisible {
+    display: none;
   }
 }
 
-@media (max-width: 950px) {
+@media (max-width: 900px) {
   .header {
     background-position: right -24em bottom -30em;
+  }
+  .headerContainer {
+    padding-left: 110px;
+    padding-right: 110px;
   }
 
   .headerBottom {
     flex-direction: column;
     align-items: center;
+    gap: 0;
   }
+
   .headingContainer {
     max-width: 500px;
-    gap: 35px;
     margin: 0 auto;
   }
   .heading {
@@ -121,9 +125,7 @@
     font-size: 70px;
     line-height: 70px;
   }
-  .linksContainer {
-    display: none;
-  }
+
   .logosContainer {
     flex-direction: column;
     align-items: center;
@@ -131,24 +133,33 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .header {
     background-position: right -5em top -20em;
   }
   .heading {
     font-size: 60px;
   }
+  .headerContainer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 @media (max-width: 470px) {
   .headerContainer {
-    background: url(http://localhost:3000/static/media/bg-figure.0fd5c3eb700da4da0306.svg) no-repeat right -5em top -15em,
+    background: url(http://localhost:3000/static/media/bg-figure.0fd5c3eb700da4da0306.svg)
+        no-repeat right -5em top -15em,
       #101010;
     background-size: 1000px 1000px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
+
   .headerTop {
     border-bottom: none;
   }
+
   .heading {
     padding-top: 250px;
     font-size: 40px;

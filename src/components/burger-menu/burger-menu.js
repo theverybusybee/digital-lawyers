@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import styles from "./burger-menu.module.css";
 
 function BurgerMenu({ onclick, state }) {
@@ -20,21 +19,21 @@ function BurgerMenu({ onclick, state }) {
         d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"
         stroke="#C6A67D"
         fill="none"
-        stroke-width="5.5px"
+        strokeWidth="5.5px"
       ></path>
       <path
         className={`${styles.line}  ${styles.middle}`}
         d="m 70,50 h -25"
         stroke="#C6A67D"
         fill="none"
-        stroke-width="5.5px"
+        strokeWidth="5.5px"
       ></path>
       <path
         className={`${styles.line} ${styles.bottom}`}
         d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"
         stroke="#C6A67D"
         fill="none"
-        stroke-width="5.5px"
+        strokeWidth="5.5px"
       ></path>
     </svg>
   );

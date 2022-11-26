@@ -13,7 +13,7 @@ function VotingCards({ candidateData }) {
         className={styles.link}
         rel="noreferrer"
         target="_blank"
-        href="https://t.me/+TCab2uFtiARmY2Yy"
+        href="/"
       >
         Оставить голос
       </a>
