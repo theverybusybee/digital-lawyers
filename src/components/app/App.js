@@ -1,10 +1,12 @@
-import Voting from '../voting/voting';
+import "./App.css";
+import Header from "../header/header";
+import Voting from "../voting/voting";
 import Footer from '../footer/Footer'
-import './App.css';
 
 function App() {
   return (
     <div className="App">
+      <Header />
       <Voting/>
       <Footer/>
     </div>
