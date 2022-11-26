@@ -18,7 +18,6 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  text-align: start;
   padding: 0 20px;
 }
 
@@ -48,6 +47,7 @@
   font-size: 17px;
   line-height: 20px;
   background: #c6a67d;
+  text-align: center;
 }
 
 .link:hover {

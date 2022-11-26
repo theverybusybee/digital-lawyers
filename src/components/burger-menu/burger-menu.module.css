@@ -1,0 +1,44 @@
+.menu {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.4s;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: none;
+}
+
+.menuRotate.active {
+  transform: rotate(45deg);
+}
+
+.line {
+  fill: none;
+  transition: stroke-dasharray 0.4s, stroke-dashoffset 0.4s;
+  stroke: #c6a67d;
+  stroke-width: 5.5;
+  stroke-linecap: round;
+}
+
+.menu4 .top {
+  stroke-dasharray: 40 121;
+}
+
+.menu4 .bottom {
+  stroke-dasharray: 40 121;
+}
+
+.menu4.active .top {
+  stroke-dashoffset: -68px;
+}
+
+.menu4.active .bottom {
+  stroke-dashoffset: -68px;
+}
+
+@media (max-width: 1100px) {
+  .menu {
+    display: block;
+  }
+}
