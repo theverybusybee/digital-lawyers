@@ -1,14 +1,16 @@
-import "./App.css";
+import styles from "./app.module.css";
 import Header from "../header/header";
 import Voting from "../voting/voting";
-import Footer from '../footer/Footer'
+import Footer from "../footer/Footer";
 
 function App() {
   return (
-    <div className="App">
+    <div className={styles.app}>
       <Header />
-      <Voting/>
-      <Footer/>
+      <main className={styles.main}>
+        <Voting />
+      </main>
+      <Footer />
     </div>
   );
 }

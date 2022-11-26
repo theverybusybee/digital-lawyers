@@ -1,6 +1,10 @@
 .footer {
   margin-top: 107px;
-  background-color:  #101010;;
+  background: url(http://localhost:3000/static/media/bg-figure-footer.0d4d5a373aa0f65095c3.svg) no-repeat bottom 16em
+      left -3em,
+    url(http://localhost:3000/static/media/bg-figure-footer.0d4d5a373aa0f65095c3.svg) no-repeat top -25em right -13em,
+    #101010;
+  background-size: 605.81px 692.19px;
 }
 
 .button {
@@ -13,14 +17,14 @@
   padding-left: 40px;
   padding-top: 80px;
   padding-bottom: 110px;
-    display: grid; 
-    grid-template-columns: 1fr 2fr 2fr 3fr; 
-    grid-template-rows: 1fr 2fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      "logo contest site-map info"
-      "logo contest site-map nameplates"; 
-      position: relative;
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 3fr;
+  grid-template-rows: 1fr 2fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "logo contest site-map info"
+    "logo contest site-map nameplates";
+  position: relative;
 }
 
 .logo {
@@ -29,28 +33,26 @@
 
 .contest {
   padding-left: 60px;
-  text-align: left;
   grid-area: contest;
 }
 
-.siteMap { 
+.siteMap {
   padding-left: 107px;
-  grid-area: site-map; 
+  grid-area: site-map;
 }
 
-.info { 
-  grid-area: info; 
+.info {
+  grid-area: info;
 }
 
-.nameplates { 
-  grid-area: nameplates; 
+.nameplates {
+  grid-area: nameplates;
 }
 
 .navigation {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  text-align: left;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -64,12 +66,12 @@
   margin: 0;
   padding: 0;
   margin-bottom: 20px;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
   line-height: 26px;
-  color: #C6A67D;
+  color: #c6a67d;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -77,32 +79,32 @@
   margin: 0;
   padding: 0;
   max-width: 288px;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
   font-size: 17px;
   line-height: 27px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .phone {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
   font-size: 38px;
   line-height: 46px;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .email {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
   font-size: 28px;
   line-height: 46px;
-  color: #FFFFFF;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -116,8 +118,7 @@
 }
 
 .note {
-  text-align: left;
-  background: #C6A67D;
+  background: #c6a67d;
   display: flex;
   flex-direction: column;
 }
@@ -138,7 +139,7 @@
   padding-right: 95px;
   padding-top: 20px;
   max-width: 1305px;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -149,7 +150,7 @@
 .privacyPolicyText {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -170,12 +171,12 @@
     padding-left: 301px;
     grid-template-columns: 269px 280px;
     grid-template-rows: 74px 174px 129px 37px;
-    gap: 0px 50px; 
-    grid-template-areas: 
-    "logo site-map"
-    "contest ."
-    "info ."
-    "nameplates ."; 
+    gap: 0px 50px;
+    grid-template-areas:
+      "logo site-map"
+      "contest ."
+      "info ."
+      "nameplates .";
   }
 
   .contest {
@@ -250,10 +251,14 @@
     bottom: 60px;
     right: 111px;
   }
-
 }
 
 @media screen and (max-width: 926px) {
+  .footer {
+    background: url(http://localhost:3000/static/media/bg-figure-footer.0d4d5a373aa0f65095c3.svg) no-repeat bottom 1em
+        left -17em,
+      #101010;
+  }
   .grid {
     padding-left: 101px;
   }
@@ -264,12 +269,12 @@
     padding: 0;
     padding-left: 20px;
     padding-top: 100px;
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
     grid-template-rows: 43px 99px;
-    gap: 0px 0px; 
-    grid-template-areas: 
-    "nameplates"
-    "info"; 
+    gap: 0px 0px;
+    grid-template-areas:
+      "nameplates"
+      "info";
   }
 
   .logo {
@@ -282,10 +287,6 @@
 
   .contest {
     display: none;
-  }
-
-  .info {
-    text-align: left;
   }
 
   .linkContainer {
@@ -306,10 +307,6 @@
     color: gray;
   }
 
-  .note {
-    background-color: #101010;
-  }
-
   .privacyPolicy {
     padding-left: 20px;
     padding-top: 10px;
@@ -323,5 +320,14 @@
     bottom: -151px;
     right: 13px;
   }
+}
 
+@media screen and (max-width: 360px) {
+  .footer {
+    background: url(http://localhost:3000/static/media/bg-figure-footer.0d4d5a373aa0f65095c3.svg) no-repeat top 3em left -10em,
+      #101010;
+  }
+  .note {
+    background: inherit;
+  }
 }

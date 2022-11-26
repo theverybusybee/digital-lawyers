@@ -1,4 +1,5 @@
 .section {
+  background: url(../../images/bg-figure2.svg) no-repeat top -2em left -6em, #F2F2F2;
   margin: 0 auto;
   max-width: 1437px;
   width: 100%;
@@ -12,7 +13,6 @@
   font-weight: 600;
   font-size: 30px;
   line-height: 36px;
-  text-align: left;
 }
 
 .cardsContainer {
@@ -24,6 +24,9 @@
 }
 
 @media (max-width: 925px) {
+  .section {
+    background-image: none;
+  }
   .cardsContainer {
     padding: 60px 20px 0;
     grid-template-columns: repeat(2, 1fr);
