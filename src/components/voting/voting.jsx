@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import { candidatesData } from "../utils/constants/candidates";
 import VotingCards from "../voting-cards/voting-cards";
 import styles from "./voting.module.css";
@@ -6,7 +7,12 @@ import { WeVoteApi } from '@wavesenterprise/we-vote-api';
 import { WebsocketWeVoteApi } from '@wavesenterprise/we-vote-api/websocketApi';
 
 
+
+const pollId = 163
+const telegramBotName = 'we_vote_dev_bot'
+
 function Voting() {
+  const [pollData, setPollData] = useState(null)
   const handleTelegramResponse = response => {
     console.log(response);
   };
@@ -24,7 +30,7 @@ function Voting() {
           })}
         </ul>
       </div>
-      <TelegramLoginButton dataOnauth={handleTelegramResponse} botName={'@we_vote_bot'} />
+      <TelegramLoginButton dataOnauth={handleTelegramResponse} botName={telegramBotName} />
     </section>
   );
 }
