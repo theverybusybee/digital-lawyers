@@ -1,11 +1,11 @@
 import { WeVoteApi } from '@wavesenterprise/we-vote-api';
-import { WebsocketWeVoteApi } from '@wavesenterprise/we-vote-api/websocketApi';
 
 
 
-const pollId = 4315
+
+export const pollId = 163
 const telegramBotName = 'we_vote_dev_bot'
-const config = {
+export const config = {
   backendAddress: 'https://client.we.vote/backendAddress',
   nodeAddress: 'https://client.we.vote/nodeAddress',
   authServiceAddress: 'https://client.we.vote/votingAuthService',
@@ -13,6 +13,9 @@ const config = {
   transactionFeeAssetId: '5EQ4iE4j4gRT4RvTBEHpkPoDfaeDq277aatEe4LS1Hnv',
 }
 const weVoteApi = new WeVoteApi(config)
-const websocketApi = new WebsocketWeVoteApi(config)
 
 
+export const getVote = async () => { 
+    const pollData = await weVoteApi.polls.find(pollId)
+    return console.log(pollData)
+  }
