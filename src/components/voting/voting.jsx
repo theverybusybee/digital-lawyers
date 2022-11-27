@@ -1,10 +1,14 @@
 import { candidatesData } from "../utils/constants/candidates";
 import VotingCards from "../voting-cards/voting-cards";
 import styles from "./voting.module.css";
+import TelegramLoginButton from 'react-telegram-login';
 
 console.log(candidatesData);
 
 function Voting() {
+  const handleTelegramResponse = response => {
+    console.log(response);
+  };
   return (
     <section className={styles.section}>
       <div className={styles.sectionContainer}>
@@ -19,6 +23,8 @@ function Voting() {
           })}
         </ul>
       </div>
+      <TelegramLoginButton dataOnauth={handleTelegramResponse} botName="we_vote_bot" />
+      
     </section>
   );
 }
