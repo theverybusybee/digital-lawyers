@@ -7,14 +7,18 @@ import { ReactComponent as Vk } from "../../images/vk.svg";
 import { ReactComponent as Yt } from "../../images/yt.svg";
 
 function Footer() {
+
+  const scrollUp = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,})
+  }
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
         {" "}
         <div className={styles.grid}>
-          <a href="/" className={styles.button}>
-            <img src={button} />
-          </a>
+            <img onClick={scrollUp} className={styles.button} src={button} />
           <img src={logo} alt="logo" className={styles.logo} />
           <div className={styles.contest}>
             <h3 className={styles.title}>О конкурсе</h3>
