@@ -2,8 +2,9 @@ import { candidatesData } from "../utils/constants/candidates";
 import VotingCards from "../voting-cards/voting-cards";
 import styles from "./voting.module.css";
 import TelegramLoginButton from 'react-telegram-login';
+import { WeVoteApi } from '@wavesenterprise/we-vote-api';
+import { WebsocketWeVoteApi } from '@wavesenterprise/we-vote-api/websocketApi';
 
-console.log(candidatesData);
 
 function Voting() {
   const handleTelegramResponse = response => {
@@ -23,8 +24,7 @@ function Voting() {
           })}
         </ul>
       </div>
-      <TelegramLoginButton dataOnauth={handleTelegramResponse} botName="we_vote_bot" />
-      
+      <TelegramLoginButton dataOnauth={handleTelegramResponse} botName={'@we_vote_bot'} />
     </section>
   );
 }
