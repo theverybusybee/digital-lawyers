@@ -1,11 +1,9 @@
 .section {
-  background: #f2f2f2;
   padding-bottom: 107px;
 }
 
+
 .sectionContainer {
-  background: url(../../images/bg-figure2.svg) no-repeat top -2em left -6em,
-    #f2f2f2;
   margin: 0 auto;
   padding: 0;
 }
