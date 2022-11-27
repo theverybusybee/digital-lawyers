@@ -3,19 +3,27 @@ import { candidatesData } from "../utils/constants/candidates";
 import VotingCards from "../voting-cards/voting-cards";
 import styles from "./voting.module.css";
 import TelegramLoginButton from 'react-telegram-login';
-import { WeVoteApi } from '@wavesenterprise/we-vote-api';
-import { WebsocketWeVoteApi } from '@wavesenterprise/we-vote-api/websocketApi';
 
 
-
-const pollId = 163
-const telegramBotName = 'we_vote_dev_bot'
 
 function Voting() {
   const [pollData, setPollData] = useState(null)
   const handleTelegramResponse = response => {
     console.log(response);
   };
+
+  // useEffect(() => {
+  //   websocketApi.connect()
+  //   weVoteApi.polls.find(pollId)
+  //     .then((setPollData))
+  //   const handler = (data) => {
+  //     if (data.id === pollId) {
+  //       setPollData(data)
+  //     }
+  //   }
+  //   websocketApi.subscribeOnPollUpdate(pollId, handler)
+  //   return () => websocketApi.unsubscribeFromPollUpdate(pollId, handler)
+  // },[])
   return (
     <section className={styles.section}>
       <div className={styles.sectionContainer}>
@@ -30,7 +38,7 @@ function Voting() {
           })}
         </ul>
       </div>
-      <TelegramLoginButton dataOnauth={handleTelegramResponse} botName={telegramBotName} />
+      <TelegramLoginButton dataOnauth={handleTelegramResponse} botName={''} />
     </section>
   );
 }
