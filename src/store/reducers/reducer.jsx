@@ -1,13 +1,12 @@
-import {ADD_VOTING_DATA} from '../actions/reducer.js'
+import { ADD_VOTING_DATA } from "../actions/reducer.js";
 
 const initialState = {
-  title: '',
+  title: "",
   options: null,
   id: 0,
-}
+};
 
-const votingReducer = (
-  state = initialState, action) => {
+const votingReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_VOTING_DATA: {
       return {
@@ -20,6 +19,6 @@ const votingReducer = (
     default:
       return state;
   }
-}
+};
 
 export default votingReducer;

@@ -1,37 +1,52 @@
-import React, { useEffect, useState } from 'react';
-import { candidatesData } from "../utils/constants/candidates";
+import React, { useEffect, useState } from "react";
 import VotingCards from "../voting-cards/voting-cards";
 import styles from "./voting.module.css";
-import TelegramLoginButton from 'react-telegram-login';
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
+import { pollId } from "../../store/weVote/weVote";
 
-const telegramBotName = 'we_vote_dev_bot'
-
-function Voting() {
-  const [pollData, setPollData] = useState(null)
+function Voting({ weVoteApi, websocketWeVoteApi }) {
+  const [pollData, setPollData] = useState(null);
   const votingData = useSelector((state) => state.votingReducer);
-  const handleTelegramResponse = response => {
-    console.log(response);
-  };
 
-  console.log(votingData)
+  useEffect(() => {
+    weVoteApi.polls.find(pollId).then(setPollData);
+    const handler = (data) => {
+      if (data.id === pollId) {
+        setPollData(data);
+      }
+    };
+    websocketWeVoteApi.subscribeOnPollUpdate(pollId, handler);
+    return () => websocketWeVoteApi.unsubscribeFromPollUpdate(pollId, handler);
+  }, [pollId, weVoteApi.polls.find]);
 
-  return (votingData.title &&
-    <section className={styles.section}>
-      <div className={styles.sectionContainer}>
-        {" "}
-        <h2 className={styles.title}>{votingData.title}</h2>
-        <ul className={styles.cardsContainer}>
-          {votingData?.options.map((candidate, index) => {
-            return <VotingCards candidateData={candidate} key={index} />;
-          })}
-        </ul>
-      </div>
-      <TelegramLoginButton
-        dataOnauth={handleTelegramResponse}
-        botName={'we_vote_dev_bot'}
-      />
-    </section>
+  if (!pollData) {
+    return <div>Poll {pollId} loading</div>;
+  }
+
+  console.log(votingData);
+
+  return (
+    votingData.title && (
+      <section className={styles.section}>
+        <div className={styles.sectionContainer}>
+          {" "}
+          <h2 className={styles.title}>{votingData.title}</h2>
+          <ul className={styles.cardsContainer}>
+            {votingData?.options.map((candidate, index) => {
+              return (
+                <VotingCards
+                  pollData={pollData}
+                  candidateData={candidate}
+                  setPollData={setPollData}
+                  weVoteApi={weVoteApi}
+                  key={index}
+                />
+              );
+            })}
+          </ul>
+        </div>
+      </section>
+    )
   );
 }
 
