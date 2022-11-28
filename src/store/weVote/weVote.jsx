@@ -1,9 +1,5 @@
 import { WeVoteApi } from '@wavesenterprise/we-vote-api';
-
-
-
-
-export const pollId = 163
+export const pollId = 4315
 const telegramBotName = 'we_vote_dev_bot'
 export const config = {
   backendAddress: 'https://client.we.vote/backendAddress',
