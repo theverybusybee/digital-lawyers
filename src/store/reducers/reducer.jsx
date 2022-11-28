@@ -1,4 +1,4 @@
-import {ADD_VOTING_DATA} from '../actions/actions.js'
+import {ADD_VOTING_DATA} from '../actions/reducer.js'
 
 const initialState = {
   title: '',

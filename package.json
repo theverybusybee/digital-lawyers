@@ -10,6 +10,8 @@
     "@testing-library/user-event": "^13.5.0",
     "@wavesenterprise/we-vote-api": "^0.1.1",
     "axios": "^0.26.1",
+    "cross-env": "^7.0.3",
+    "mkcert": "^1.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
@@ -21,7 +23,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cross-env react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

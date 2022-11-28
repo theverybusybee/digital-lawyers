@@ -16,20 +16,6 @@ function Voting() {
 
   console.log(votingData)
 
-
-
-  // useEffect(() => {
-  //   websocketApi.connect()
-  //   weVoteApi.polls.find(pollId)
-  //     .then((setPollData))
-  //   const handler = (data) => {
-  //     if (data.id === pollId) {
-  //       setPollData(data)
-  //     }
-  //   }
-  //   websocketApi.subscribeOnPollUpdate(pollId, handler)
-  //   return () => websocketApi.unsubscribeFromPollUpdate(pollId, handler)
-  // },[])
   return (votingData.title &&
     <section className={styles.section}>
       <div className={styles.sectionContainer}>
@@ -43,7 +29,7 @@ function Voting() {
       </div>
       <TelegramLoginButton
         dataOnauth={handleTelegramResponse}
-        botName={telegramBotName}
+        botName={'we_vote_dev_bot'}
       />
     </section>
   );

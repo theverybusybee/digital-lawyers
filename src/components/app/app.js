@@ -8,7 +8,7 @@ import {websocketApi} from '../../store/weVote/WebsocketWeVoteApi.jsx';
 import {getVote} from '../../store/weVote/weVote.jsx';
 import { WeVoteApi } from '@wavesenterprise/we-vote-api';
 import { useDispatch, useSelector } from "react-redux";
-import {ADD_VOTING_DATA} from '../../store/actions/actions.js';
+import {ADD_VOTING_DATA} from '../../store/actions/reducer.js';
 
    export const config = {
      backendAddress: "https://client.we.vote/backendAddress",
