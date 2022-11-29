@@ -19,7 +19,6 @@ export const config = {
 function App() {
   const dispatch = useDispatch();
   const pollId = 4315;
-  const telegramBotName = "we_vote_dev_bot";
   const weVoteApi = new WeVoteApi(config);
 
   const getVote = async () => {

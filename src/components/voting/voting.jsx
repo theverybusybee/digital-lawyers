@@ -23,8 +23,6 @@ function Voting({ weVoteApi, websocketWeVoteApi }) {
     return <div>Poll {pollId} loading</div>;
   }
 
-  console.log(votingData);
-
   return (
     votingData.title && (
       <section className={styles.section}>
@@ -39,6 +37,7 @@ function Voting({ weVoteApi, websocketWeVoteApi }) {
                   candidateData={candidate}
                   setPollData={setPollData}
                   weVoteApi={weVoteApi}
+                  index={index}
                   key={index}
                 />
               );

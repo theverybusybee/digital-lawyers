@@ -13,5 +13,4 @@ const weVoteApi = new WeVoteApi(config)
 
 export const getVote = async () => { 
     const pollData = await weVoteApi.polls.find(pollId)
-    return console.log(pollData)
   }

@@ -1,9 +1,9 @@
 import styles from "./voting-cards.module.css";
 import { config } from "../app/app";
 import VoteButton from "../vote-button/vote-button";
-import telegramBotName from "react-telegram-login";
 
-function VotingCards({ candidateData, weVoteApi, websocketWeVoteApi, pollData, setPollData }) {
+function VotingCards({ candidateData, weVoteApi, websocketWeVoteApi, pollData, setPollData, onVote, index }) {
+
   return (
     <li className={styles.card}>
       <img
@@ -16,8 +16,8 @@ function VotingCards({ candidateData, weVoteApi, websocketWeVoteApi, pollData, s
         <p className={styles.description}>{candidateData.description}</p>
       </div>
        <VoteButton
+          index={index}
           pollData={pollData}
-          telegramBotName={telegramBotName}
           weVoteApi={weVoteApi}
           websocketWeVoteApi={websocketWeVoteApi}
           setPollData={setPollData}
