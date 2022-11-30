@@ -15,7 +15,7 @@ const votingReducer = (state = initialState, action) => {
     case SET_USER_DATA: {
       return {
         ...state,
-        userData: { ...state, userData: action.payload.data },
+        userData: { ...state, userData: action.payload },
       };
     }
     case SET_ON_AUTH: {

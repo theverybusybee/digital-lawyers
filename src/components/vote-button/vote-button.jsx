@@ -11,7 +11,6 @@ function VoteButton({
   pollData,
   weVoteApi,
   websocketWeVoteApi,
-  setPollData,
   index,
 }) {
   const [isAuthorized, setAuthorized] = useState(false);
@@ -19,21 +18,16 @@ function VoteButton({
   const [bulletin, setBulletin] = useState([0, 0, 0, 0]);
   const telegramBotName = "we_vote_dev_bot";
   const dispatch = useDispatch();
-  const getVote = async () => {
-    const pollData = await weVoteApi.polls.find(pollId);
-    return dispatch({ type: ADD_VOTING_DATA, payload: pollData });
-  };
   // const handleTelegramResponse = (response) => {
-  //   dispatch({ type: SET_USER_DATA, payload: response });
+  //   // dispatch({ type: SET_USER_DATA, payload: response });
+  //   console.log(response);
   // };
 
   const onAuth = async (user) => {
-    const response = await weVoteApi.auth.loginTelegram(user, "ru");
+    const response = await weVoteApi.auth.loginTelegram(user, 'ru')
+    setAuthorized(true)
     weVoteApi.authorize(response);
     websocketWeVoteApi.connect(response);
-    setAuthorized(true);
-    weVoteApi.polls.find(pollId).then(setPollData);
-    getVote()
   };
 
   const setIndexVote = () => {
@@ -53,9 +47,7 @@ function VoteButton({
 
   const onVote = async () => {
     setIndexVote();
-    if (bulletin == [0, 0, 0, 0]) {
-      setIndexVote();
-    }
+    console.log(bulletin)
     const nodeConfig = await weVoteApi.node.getNodeConfig();
     await weVoteApi.polls.vote({
       pollData,
@@ -66,16 +58,19 @@ function VoteButton({
     setVoteSent(true);
   };
 
-  if (isAuthorized) {
+  if (!isAuthorized) {
     return (
+      <>
+      <p>для голосования требуется авторизация</p>
       <TelegramLoginButton
         botName={telegramBotName}
         buttonSize={"large"}
         cornerRadius={0}
         lang={"ru"}
-        usePic={false}
+        usePic={true}
         dataOnauth={onAuth}
       />
+      </>
     );
   }
 

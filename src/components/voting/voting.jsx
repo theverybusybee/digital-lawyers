@@ -7,19 +7,9 @@ import { pollId } from "../../store/weVote/weVote";
 function Voting({ weVoteApi, websocketWeVoteApi }) {
   const [pollData, setPollData] = useState(null);
   const votingData = useSelector((state) => state.votingReducer);
+  console.log(votingData)
 
-  useEffect(() => {
-    weVoteApi.polls.find(pollId).then(setPollData);
-    const handler = (data) => {
-      if (data.id === pollId) {
-        setPollData(data);
-      }
-    };
-    websocketWeVoteApi.subscribeOnPollUpdate(pollId, handler);
-    return () => websocketWeVoteApi.unsubscribeFromPollUpdate(pollId, handler);
-  }, [pollId, weVoteApi.polls.find]);
-
-  if (!pollData) {
+  if (!votingData) {
     return <div>Poll {pollId} loading</div>;
   }
 
@@ -33,7 +23,7 @@ function Voting({ weVoteApi, websocketWeVoteApi }) {
             {votingData?.options.map((candidate, index) => {
               return (
                 <VotingCards
-                  pollData={pollData}
+                  pollData={votingData}
                   candidateData={candidate}
                   setPollData={setPollData}
                   weVoteApi={weVoteApi}

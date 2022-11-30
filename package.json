@@ -23,7 +23,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "cross-env react-scripts start",
+    "start": "set HTTPS=true&&set HOST=voting.local.com&&set PORT=443&&set SSL_CRT_FILE=voting.local.com.pem&&set SSL_KEY_FILE=voting.local.com-key.pem&&react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
