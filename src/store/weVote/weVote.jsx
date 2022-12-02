@@ -1,5 +1,5 @@
 import { WeVoteApi } from '@wavesenterprise/we-vote-api';
-export const pollId = 4412
+export const pollId = 4367
 export const config = {
   backendAddress: '/backendAddress',
   nodeAddress: '/nodeAddress',
