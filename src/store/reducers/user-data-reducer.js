@@ -2,6 +2,7 @@ import {
   SET_USER_DATA,
   SET_ON_AUTH,
   SET_IS_VOTED,
+
 } from "../actions/user-data-reducer";
 
 const initialState = {
@@ -10,7 +11,7 @@ const initialState = {
   isVoted: false,
 };
 
-const votingReducer = (state = initialState, action) => {
+const userDataReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_USER_DATA: {
       return {
@@ -35,4 +36,4 @@ const votingReducer = (state = initialState, action) => {
   }
 };
 
-export default votingReducer;
+export default userDataReducer;

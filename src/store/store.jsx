@@ -1,13 +1,11 @@
-import { applyMiddleware, compose, combineReducers } from "redux";
+import { combineReducers } from "redux";
 import { configureStore } from "@reduxjs/toolkit";
-import thunk from "redux-thunk";
-import thunkmiddleware from "redux-thunk";
-import votingReducer  from "./reducers/reducer.jsx";
-
-const wsUrl = "wss://norma.nomoreparties.space/orders";
+import votingReducer  from "./reducers/voting-reducer.js";
+import userDataReducer from "./reducers/user-data-reducer.js";
 
 const reduсers = combineReducers({
   votingReducer: votingReducer,
+  userDataReducer: userDataReducer,
 });
 
 const state = {};

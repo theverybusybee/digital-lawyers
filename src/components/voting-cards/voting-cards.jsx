@@ -1,9 +1,19 @@
 import styles from "./voting-cards.module.css";
-import { config } from "../app/app";
+import { config } from "../../store/weVote/weVote"; 
 import VoteButton from "../vote-button/vote-button";
 
-function VotingCards({ candidateData, weVoteApi, websocketWeVoteApi, pollData, setPollData, onVote, index }) {
-
+function VotingCards({
+  candidateData,
+  weVoteApi,
+  websocketWeVoteApi,
+  pollData,
+  setPollData,
+  onVote,
+  index,
+  isAuthorized,
+  isVote,
+  setVoteSent
+}) {
   return (
     <li className={styles.card}>
       <img
@@ -15,13 +25,16 @@ function VotingCards({ candidateData, weVoteApi, websocketWeVoteApi, pollData, s
         <p className={styles.name}>{candidateData.title}</p>
         <p className={styles.description}>{candidateData.description}</p>
       </div>
-       <VoteButton
-          index={index}
-          pollData={pollData}
-          weVoteApi={weVoteApi}
-          websocketWeVoteApi={websocketWeVoteApi}
-          setPollData={setPollData}
-        />
+      <VoteButton
+        isAuthorized={isAuthorized}
+        index={index}
+        pollData={pollData}
+        weVoteApi={weVoteApi}
+        websocketWeVoteApi={websocketWeVoteApi}
+        setPollData={setPollData}
+        isVote={isVote}
+        setVoteSent={setVoteSent}
+      />
     </li>
   );
 }

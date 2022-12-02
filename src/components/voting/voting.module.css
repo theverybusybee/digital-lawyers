@@ -2,14 +2,13 @@
   padding-bottom: 107px;
 }
 
-
 .sectionContainer {
   margin: 0 auto;
-  padding: 0;
+  padding: 0 35px;
 }
 
 .title {
-  padding: 120px 35px 80px;
+  padding: 120px 0px 80px;
   margin: 0;
   max-width: 775px;
   font-weight: 600;
@@ -18,42 +17,35 @@
 }
 
 .cardsContainer {
-  padding: 0 35px;
+  padding: 0 0px;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(3, minmax(268px, 443px));
   gap: 107px 20px;
 }
 
-@media (max-width: 900px) {
-  .cardsContainer {
-    padding: 0 110px 0;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 60px 10px;
-  }
-  .title {
-    padding-left: 110px;
-    padding-right: 110px;
-  }
+.telegramBtn {
+  padding-bottom: 80px;
 }
 
-@media (max-width: 700px) {
-  .cardsContainer {
-    padding: 0 20px 0;
-  }
-  .title {
+@media (max-width: 800px) {
+  .sectionContainer {
     padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 800px) {
+  .cardsContainer {
+    padding: 0;
+  }
+}
+
+@media (max-width: 500px) {
   .section {
     padding-top: 50px;
     padding-bottom: 50px;
   }
   .cardsContainer {
-    padding-left: 15px;
-    padding-right: 15px;
     grid-template-columns: 1fr;
     gap: 50px 0;
   }
@@ -61,5 +53,12 @@
     padding: 0 15px 15px;
     font-size: 20px;
     line-height: 22px;
+  }
+}
+
+@media (max-width: 420px) {
+  .sectionContainer {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }

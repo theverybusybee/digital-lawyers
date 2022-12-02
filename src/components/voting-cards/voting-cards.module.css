@@ -1,24 +1,31 @@
 .card {
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+    grid-template-areas:
+      "img content"
+      "button content";
+    grid-template-rows: min-content 1fr;
+  
   gap: 30px;
   color: #101010;
-  align-items: center;
+  align-items: start;
+  text-align: justify;
+  max-width: 1400px;
 }
 
 .photo {
   display: block;
   width: 100%;
+  max-width: 350px;
   object-fit: contain;
+  grid-area: img;
 }
 
 .content {
-  max-width: 403px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 0 20px;
+  grid-area: content;
 }
 
 .name {
@@ -33,4 +40,27 @@
   font-weight: 400;
   font-size: 17px;
   line-height: 27px;
+}
+
+@media (max-width: 800px) {
+  .card {
+    grid-template-areas:
+      "img"
+      "content"
+      "button";
+    justify-items: center;
+    gap: 30px 0;
+  }
+
+  .title {
+    padding-left: 20px;
+  }
+
+  .photo {
+    max-width: none;
+  }
+
+  .content {
+    padding-left: 20px;
+  }
 }
